@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ریموت دسک</string>
+
+    <!-- صفحه اصلی -->
+    <string name="main_title">ریموت دسک</string>
+    <string name="main_subtitle">اشتراک صفحه و کنترل از راه دور در شبکه محلی</string>
+    <string name="btn_role_viewer">اتصال به رایانه (نمایشگر)</string>
+    <string name="btn_role_host">اشتراک‌گذاری صفحه گوشی (میزبان)</string>
+    <string name="main_hint">نکته: در حالت میزبانی گوشی، رایانه فقط می‌تواند صفحه گوشی را ببیند و کنترل لمسی گوشی از رایانه ممکن نیست.</string>
+
+    <!-- نمایشگر -->
+    <string name="viewer_connect_title">اتصال به مقصد</string>
+    <string name="hint_host">آدرس IP مقصد</string>
+    <string name="hint_port">پورت (پیش‌فرض 48500)</string>
+    <string name="hint_name">نام شما</string>
+    <string name="hint_pin">رمز اتصال (PIN)</string>
+    <string name="btn_connect">اتصال</string>
+    <string name="btn_disconnect">قطع اتصال</string>
+    <string name="btn_keyboard">کیبورد</string>
+    <string name="connecting">در حال اتصال…</string>
+    <string name="waiting_approval">در انتظار تائید کاربر مقصد…</string>
+    <string name="notif_no_permission">اجازه دسترسی داده نشد</string>
+    <string name="toast_pin_required">رمز اتصال را وارد کنید</string>
+    <string name="toast_pin_wrong">رمز نادرست است یا مقصد اتصال را رد کرد</string>
+    <string name="toast_host_required">آدرس مقصد را وارد کنید</string>
+    <string name="keyboard_hint">متن را اینجا بنویسید…</string>
+    <string name="viewer_status">آماده</string>
+
+    <!-- میزبان -->
+    <string name="host_title">اشتراک‌گذاری صفحه گوشی</string>
+    <string name="host_desc">رایانه‌ای که می‌خواهد صفحه گوشی شما را ببیند به این آدرس و پورت وصل می‌شود. رمز اتصال را به او بدهید.</string>
+    <string name="host_pin_label">رمز اتصال (PIN)</string>
+    <string name="cb_approval">هر اتصال با تائید من انجام شود</string>
+    <string name="btn_start_share">شروع اشتراک‌گذاری صفحه</string>
+    <string name="btn_stop_share">توقف اشتراک‌گذاری</string>
+    <string name="host_status">غیرفعال</string>
+    <string name="host_active">اشتراک فعال — رایانه به %1$s:%2$d وصل شود</string>
+    <string name="approval_title">درخواست اتصال</string>
+    <string name="approval_msg">%1$s از آدرس %2$s می‌خواهد صفحه شما را ببیند.\nپذیرش می‌کنید؟</string>
+    <string name="accept">پذیرش</string>
+    <string name="deny">رد</string>
+    <string name="notif_title">ریموت دسک فعال است</string>
+    <string name="notif_text">صفحه شما به اشتراک گذاشته شده</string>
+    <string name="notif_channel">اشتراک صفحه</string>
+    <string name="projection_denied">اجازه ضبط صفحه داده نشد</string>
+</resources>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ================= پنل اتصال ================= -->
+    <ScrollView
+        android:id="@+id/connectPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/viewer_connect_title"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/etHost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_host"
+                android:inputType="text"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/etPort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_port"
+                android:inputType="number"
+                android:text="48500"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_name"
+                android:inputType="textPersonName"
+                android:text="گوشی من"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/etPin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_pin"
+                android:inputType="numberPassword"
+                android:importantForAutofill="no" />
+
+            <Button
+                android:id="@+id/btnConnect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_connect"
+                android:layout_marginTop="20dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:id="@+id/tvConnectStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/viewer_status"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ================= نمای صفحه ================= -->
+    <FrameLayout
+        android:id="@+id/viewerPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/screen_bg">
+
+        <com.remotedesk.app.ScreenView
+            android:id="@+id/screenView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- نوار بالای صفحه -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/bar_bg"
+            android:gravity="start|center_vertical"
+            android:padding="6dp">
+
+            <Button
+                android:id="@+id/btnDisconnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_disconnect"
+                android:textColor="@color/text_on_dark"
+                style="@style/Widget.AppCompat.Button.Small" />
+
+            <Button
+                android:id="@+id/btnKeyboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_keyboard"
+                android:textColor="@color/text_on_dark"
+                style="@style/Widget.AppCompat.Button.Small" />
+
+            <TextView
+                android:id="@+id/tvViewerStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="@color/text_on_dark"
+                android:textSize="12sp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:paddingStart="8dp" />
+        </LinearLayout>
+
+        <!-- پنل کیبورد -->
+        <ScrollView
+            android:id="@+id/keyboardPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+            android:background="@color/bar_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <EditText
+                    android:id="@+id/etKeys"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/keyboard_hint"
+                    android:inputType="text"
+                    android:textColor="@color/text_on_dark"
+                    android:textColorHint="#888888"
+                    android:importantForAutofill="no" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp">
+
+                    <Button android:id="@+id/btnCtrl" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="Ctrl" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnAlt" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="Alt" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnShift" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="Shift" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnTab" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="Tab" android:textColor="@color/text_on_dark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp">
+
+                    <Button android:id="@+id/btnEsc" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="Esc" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnEnter" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="Enter" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnBackspace" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="⌫" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnHome" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="Home" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnEnd" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="End" android:textColor="@color/text_on_dark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp">
+
+                    <Button android:id="@+id/btnLeft" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="◀" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnUp" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="▲" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnDown" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="▼" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnRight" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="▶" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnPgUp" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="PgUp" android:textColor="@color/text_on_dark" />
+                    <Button android:id="@+id/btnPgDn" style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:text="PgDn" android:textColor="@color/text_on_dark" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</FrameLayout>
