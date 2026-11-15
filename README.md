@@ -70,6 +70,18 @@ python main.py viewer   :: نمایشگر (کنترل رایانه مقصد)
 netsh advfirewall firewall add rule name="RemoteDesk" dir=in action=allow protocol=TCP localport=48500
 ```
 
+### دریافت نسخه اجرایی (EXE) — بدون نیاز به نصب پایتون
+
+1. به برگه **Actions** همین مخزن بروید و آخرین اجرای «Build Windows EXE» را باز کنید.
+2. در پایین صفحه، آرتیفکت **RemoteDesk-Windows-EXE** را دانلود و باز کنید؛ شامل سه فایل است:
+   - `RemoteDesk.exe` — لانچر (پنجره انتخاب نقش میزبان/نمایشگر)
+   - `RemoteDesk-Host.exe` — مستقیم به‌عنوان میزبان
+   - `RemoteDesk-Viewer.exe` — مستقیم به‌عنوان نمایشگر
+3. هر فایل EXE تک‌فایلی و مستقل است و روی ویندوز ۸ به بالا اجرا می‌شود (بیلد با Python 3.8).
+
+> ⚠️ اگر Windows SmartScreen فایل را نگه داشت، «More info → Run anyway» بزنید؛
+> چون فایل امضای دیجیتال ندارد، ممکن است آنتی‌ویروس‌ها اخطار اولیه بدهند.
+
 ## نسخه اندروید
 
 ### دریافت APK آماده

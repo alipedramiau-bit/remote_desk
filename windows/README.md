@@ -1,6 +1,20 @@
 # ریموت دسک — نسخه ویندوز
 
-پیش‌نیاز: **Python 3.8 به بالا** (روی ویندوز ۸ از Python 3.8 استفاده کنید؛ روی ویندوز ۱۰/۱۱ آخرین نسخه هم قابل استفاده است).
+## نسخه اجرایی (EXE) — بدون نصب پایتون
+
+به برگه **Actions** مخزن بروید، اجرای «Build Windows EXE» را باز کنید و آرتیفکت
+**RemoteDesk-Windows-EXE** را دانلود کنید: سه فایل `RemoteDesk.exe` (لانچر)،
+`RemoteDesk-Host.exe` و `RemoteDesk-Viewer.exe` — تک‌فایلی و مستقل، سازگار با ویندوز ۸ به بالا.
+
+بیلد محلی با PyInstaller (روی خود ویندوز):
+
+```bat
+cd windows
+pip install -r requirements.txt pyinstaller==6.6.0
+python -m PyInstaller --onefile --windowed --icon build_assets\remote_desk.ico --name RemoteDesk main.py
+```
+
+پیش‌نیاز نسخه اسکریپتی: **Python 3.8 به بالا** (روی ویندوز ۸ از Python 3.8 استفاده کنید؛ روی ویندوز ۱۰/۱۱ آخرین نسخه هم قابل استفاده است).
 Tkinter همراه پایتون نصب است.
 
 ## نصب
